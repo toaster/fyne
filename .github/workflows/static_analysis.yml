@@ -29,7 +29,7 @@ jobs:
       run: rm -rf vendor/
 
     - name: Vet
-      run: go vet -tags ci ./...
+      run: go vet ./...
 
     - name: Goimports
       run: test -z $(goimports -e -d . | tee /dev/stderr)
