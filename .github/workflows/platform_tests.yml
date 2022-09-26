@@ -14,6 +14,8 @@ jobs:
         include:
           - os: ubuntu-latest
             runner: xvfb-run
+          - os: windows-latest
+            tags: no_glfw
 
     steps:
     - uses: actions/checkout@v2
@@ -44,7 +46,7 @@ jobs:
       if: ${{ runner.os == 'macOS' }}
 
     - name: Tests
-      run: ${{ matrix.runner }} go test ./...
+      run: ${{ matrix.runner }} go test -tags "${{ matrix.tags }}" ./...
 
     - name: Wayland Tests
       run: go test -tags ci,wayland ./...
