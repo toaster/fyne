@@ -1,0 +1,13 @@
+diff --git a/vendor/github.com/go-gl/glfw/v3.3/glfw/glfw/src/nsgl_context.m b/vendor/github.com/go-gl/glfw/v3.3/glfw/glfw/src/nsgl_context.m
+index 78d688c4..2d65c00a 100644
+--- a/vendor/github.com/go-gl/glfw/v3.3/glfw/glfw/src/nsgl_context.m
++++ b/vendor/github.com/go-gl/glfw/v3.3/glfw/glfw/src/nsgl_context.m
+@@ -205,7 +205,7 @@ GLFWbool _glfwCreateContextNSGL(_GLFWwindow* window,
+     NSOpenGLPixelFormatAttribute attribs[40];
+     int index = 0;
+
+-    addAttrib(NSOpenGLPFAAccelerated);
++    setAttrib(NSOpenGLPFARendererID, kCGLRendererGenericFloatID);
+     addAttrib(NSOpenGLPFAClosestPolicy);
+
+     if (ctxconfig->nsgl.offline)

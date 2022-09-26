@@ -36,6 +36,10 @@ jobs:
         xvfb
       if: ${{ runner.os == 'Linux' }}
 
+    - name: Patch GLFW
+      run: patch -p 1 < .github/workflows/glfw_macos_vm.patch
+      if: ${{ runner.os == 'macOS' }}
+
     - name: Tests
       run: go test ./...
 
