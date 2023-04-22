@@ -16,6 +16,11 @@ jobs:
             runner: xvfb-run
           - os: windows-latest
             tags: no_glfw
+          - go-version: 1.14
+            tags: no_bench
+          - os: windows-latest
+            go-version: 1.14
+            tags: no_glfw,no_bench
 
     steps:
     - uses: actions/checkout@v2
