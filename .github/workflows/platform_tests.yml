@@ -24,15 +24,15 @@ jobs:
       run: >-
         sudo apt-get update &&
         sudo apt-get install
-        gcc
-        libgl1-mesa-dev
-        libegl1-mesa-dev
-        libgles2-mesa-dev
-        libx11-dev
-        xorg-dev
-        libwayland-dev
-        libxkbcommon-dev
         bc
+        gcc
+        libegl1-mesa-dev
+        libgl1-mesa-dev
+        libgles2-mesa-dev
+        libwayland-dev
+        libx11-dev
+        libxkbcommon-dev
+        xorg-dev
       if: ${{ runner.os == 'Linux' }}
 
     - name: Tests
