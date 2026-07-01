@@ -7,6 +7,7 @@ func (p *painter) updateBuffer(vbo Buffer, points []float32) {
 	p.logError()
 	// BufferSubData seems significantly less performant on desktop
 	// so use BufferData instead
-	p.ctx.BufferData(arrayBuffer, points, staticDraw)
+	// p.ctx.BufferData(arrayBuffer, points, staticDraw)
+	p.ctx.BufferSubData(arrayBuffer, points)
 	p.logError()
 }

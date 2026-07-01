@@ -96,7 +96,7 @@ func (p *painter) Init() {
 
 	p.lineProgram = programState{
 		ref:        p.createProgram("line"),
-		buff:       p.createBuffer(16),
+		buff:       p.createBuffer(24),
 		uniforms:   make(map[string]*uniformState),
 		attributes: make(map[string]Attribute),
 	}
